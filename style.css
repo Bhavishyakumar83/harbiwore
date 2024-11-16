@@ -1,0 +1,1695 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');
+* {
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  font-family: 'Spartan', sans-serif;
+}
+h1 {
+  font-size: 50px;
+  line-height: 64px;
+  color: #222;
+}
+h2 {
+  font-size: 46px;
+  line-height: 54px;
+  color: #222;
+}
+h4 {
+  font-size: 20px;
+  color: #222;
+}
+
+h6 {
+  font-weight: 700;
+  font-size: 12px;
+
+}
+
+P {
+  font-size: 16px;
+  color: #465b52;
+  margin: 15px 0 20px 0;
+}
+
+
+.section-p1 {
+  padding: 40px 80px;
+}
+
+
+.section-m1 {
+  margin: 40px 0;
+}
+
+button.normal{
+  font-size: 14px;
+  font-weight: 600;
+  padding: 15px 30px;
+  color: black;
+  border-color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: 0.3s;
+}
+
+button.white {
+  font-size: 15px;
+  font-weight: 600;
+  padding: 11px 18px;
+  color: white;
+  background-color: transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 3px solid white;
+  outline: none;
+  transition: 0.3s;
+}
+
+
+body {
+  width: 100%;
+  background-color: #fdfdfd;
+}
+
+
+/* Header Start */
+#hamburger-icon {
+  position: relative;
+  right: 750px; /* Shifts the icon 20px from the right */
+  bottom: 10px; /* Shifts the icon 20px from the bottom */
+  font-size: 56px; /* Increases the size of the icon significantly */
+  cursor: pointer;
+  z-index: 1000; /* Ensures it stays on top of other elements */
+  
+}
+
+
+#header{
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 80px;
+  background-color: transparent;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+  position: static;
+  top: 0;
+  left: 0;
+  
+
+}
+
+
+
+
+
+
+
+#header .logo{
+  width: 50%;
+  height: 10vh;
+  margin-left: 450px;
+  
+}
+
+#icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 30px; /* Equal space between icons */
+  margin-right: 20px; /* Adjust this if needed for overall positioning */
+}
+
+/* Search Container */
+#search-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+#search-icon {
+  font-size: 24px;
+  color: black;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+}
+
+#search-input {
+  position: absolute;
+  right: 0;
+  width: 0;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  opacity: 0;
+  transition: width 0.3s ease, opacity 0.3s ease;
+  font-size: 16px;
+  z-index: 1;
+}
+
+#search-input::placeholder {
+  color: black;
+}
+
+#search-container.open #search-input {
+  width: 200px;
+  opacity: 1;
+  right: 0;
+  margin-right: -40px;
+}
+
+
+
+
+
+/* Drawer Styling */
+
+
+
+.drawer {
+  position: fixed;
+  top: 0;
+  left: 0; /* Changed from right to left */
+  width: 20%;
+  height: 100%;
+  background-color: #fff;
+  transform: translateX(-100%); /* Changed to slide in from the left */
+  transition: transform 0.3s ease;
+  z-index: 1000;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.drawer.open {
+  transform: translateX(0);
+}
+
+#navbar {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#navbar li {
+  padding: 15px;
+}
+
+#navbar li a {
+  text-decoration: none;
+  color: grey;
+  font-size: large;
+  
+}
+
+#navbar li a:hover,
+#navbar li a.active {
+  color: black;
+  font-weight: bold;
+  transition: 0.4s;
+}
+
+#navbar li a.active::after,
+#navbar li a:hover::after {
+  content: "";
+  width: 30%;
+  height: 2px;
+  background-color: #088178;
+  position: absolute;
+  bottom: -4px;
+  left: 20px;
+}
+
+/* Hide the submenu by default */
+.drawer ul.submenu {
+  display: none;
+  list-style: none;
+  margin-left: 20px; /* Indentation for submenu */
+}
+
+/* Show submenu on hover */
+.drawer ul#navbar li:hover ul.submenu {
+  display: block;
+}
+
+
+/* Optional: Style the submenu links */
+.drawer ul.submenu li a {
+  text-decoration: none;
+  color: grey; /* Change to preferred color */
+  padding: 5px 0;
+  display: block;
+  
+}
+
+.drawer ul.submenu li.tshirt a {
+  cursor: pointer;
+}
+
+.drawer ul.submenu li.jeans a {
+  cursor: not-allowed;
+}
+.drawer ul.submenu li.jeans a:hover {
+  color: grey;
+}
+
+.drawer ul.submenu li.shoes a {
+  cursor: not-allowed;
+}.drawer ul.submenu li.watch a {
+  cursor: not-allowed;
+}.drawer ul.submenu li.shirt a {
+  cursor: not-allowed;
+}.drawer ul.submenu li.jogger a {
+  cursor: not-allowed;
+}
+
+.drawer ul.submenu li a:hover {
+  color: #f39c12; /* Highlight on hover */
+}
+
+
+
+
+#close {
+  position: absolute;
+  top: 10px;
+  right: 10px; /* Changed to position close button on the right */
+  font-size: 24px;
+  cursor: pointer;
+  color: black;
+}
+
+/* Hide main content when drawer is open */
+body.drawer-open {
+  overflow: hidden;
+}
+
+#hamburger-icon i {
+  font-size: 28px; /* Adjust this value to increase or decrease the size */
+  cursor: pointer;
+}
+
+
+#mobile{
+  display: none;
+  align-items: center;
+}
+
+#search-icon{
+  margin-left: 300px;
+  margin-top: 1px;
+  margin-right: -100px;
+}
+
+#lg-bag{
+  margin-left: 80px;
+}
+
+
+
+/* Home Page */
+#hero {
+  position: relative;
+  overflow: hidden;
+  height: 100vh; /* Make sure the section covers the full viewport height */
+}
+
+#hero video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the video covers the section */
+  z-index: -1; /* Places the video behind other content */
+}
+
+#hero2 {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  margin-top: 20px;
+}
+
+#hero2 video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the video covers the section */
+  z-index: -1; /* Places the video behind other content */
+}
+
+#hero3 {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  margin-top: 20px;
+}
+
+#hero3 video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the video covers the section */
+  z-index: -1; /* Places the video behind other content */
+}
+
+#hero h4, #hero h2, #hero h1, #hero p {
+  position: relative;
+  color: white; /* Ensures text is visible over the video */
+  z-index: 1; /* Places text and button above the video */
+  margin-left: 20px;
+}
+
+#hero h4{
+  margin-top: 200px;
+  margin-left: 20px;
+}
+
+#hero button{
+  background-color: white;
+  border: 50px;
+  color: black;
+  padding: 14px 80px 14px 65px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 15px;
+  transition: 0.4s;
+  margin-left: 1100px;
+  margin-top: 550px;
+}
+
+#hero button:hover {
+  background-color: lightgrey;
+  color: black;
+}
+
+#hero button:active {
+opacity: 0.9;}
+
+#hero2 button{
+  background-color: white;
+  border: 50px;
+  color: black;
+  padding: 14px 80px 14px 65px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 15px;
+  transition: 0.4s;
+  margin-left: 1100px;
+  margin-top: 550px;
+}
+
+#hero2 button:hover {
+  background-color: lightgrey;
+  color: black;
+}
+
+#hero2 button:active {
+opacity: 0.9;}
+
+#hero3 button{
+  background-color: white;
+  border: 50px;
+  color: black;
+  padding: 14px 80px 14px 65px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 15px;
+  transition: 0.4s;
+  margin-left: 1100px;
+  margin-top: 550px;
+}
+
+#hero3 button:hover {
+  background-color: lightgrey;
+  color: black;
+}
+
+#hero3 button:active {
+opacity: 0.9;}
+/* products ki styling*/
+#product1{
+  text-align: center;
+}
+
+#product1 .pro-container{
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+  flex-wrap: wrap;
+}
+
+#product1 .pro{
+  width: 22.7%;
+  min-width: 250px;
+  padding: 10px 12px;
+  border: 1px solid #cce7d0;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
+  margin: 15px 0;
+  transition: 0.2s ease;
+  position: relative;
+}
+
+#product1 .pro:hover {
+  box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.06);
+}
+
+#product1 .pro img {
+  width: 100%;
+  border-radius: 20px;
+}
+
+#product1 .pro .des {
+  text-align: start;
+  padding: 10px 0;
+}
+
+
+#product1 .pro .des span {
+  color: darkgreen;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#product1 .pro .des h5{
+  padding-top: 7px;
+  color: #1a1a1a;
+  font-size: 14px;
+}
+
+
+#product1 .pro .des i {
+  font-size: 12px;
+  color: rgb(243, 181, 25);
+}
+
+#product1 .pro .des h4{
+  padding-top: 7px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #088178;
+}
+/* products ki styling khatam*/
+#banner{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-image: url("banner.png");
+  width: 100%;
+  height: 40vh;
+  background-size: cover;
+  background-position: center;
+}
+
+#banner h4{
+  color: white;
+  font-size: 30px;
+}
+
+#banner h2{
+  color: white;
+  padding: 30px 0;
+  font-size: 60px;
+}
+
+#banner h2 span{
+  color: yellow;
+}
+
+#banner button:hover{
+  background-color: #088178;
+  color: #fff;
+}
+
+#sm-banner{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+#sm-banner .banner-box{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background-image: url("Screenshot\ \(1346\).png");
+  min-width: 650px;
+  height: 50vh;
+  background-size: cover;
+  background-position: center;
+  padding: 30px;
+}
+
+#sm-banner .banner-box2{
+  background-image: url("small\ banner.png");
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  min-width: 650px;
+  height: 50vh;
+  background-size: cover;
+  background-position: center;
+  padding: 30px;
+}
+
+#sm-banner h4{
+  color: whitesmoke;
+  font-size: 23px;
+  font-weight: 500;
+}
+
+#sm-banner h2{
+  color: whitesmoke;
+  font-size: 30px;
+  font-weight: 800;
+}
+
+#sm-banner span{
+  color: whitesmoke;
+  font-size: 19px;
+  font-weight: 600;
+  padding-bottom: 15px;
+}
+
+#sm-banner .banner-box:hover button{
+  background: #088178;
+  border: 1pz solid #088178;
+}
+
+#sm-banner .banner-box2:hover button{
+  background: #088178;
+  border: 1pz solid #088178;
+}
+
+#banner3{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding: 0 80px;
+}
+
+#banner3 .banner-box{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background-image: url("small\ image\ 1.png");
+  min-width: 30%;
+  height: 30vh;
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+#banner3 .banner-box2{
+    background-image: url("small\ image\ 2.png");
+}
+
+#banner3 .banner-box3{
+    background-image: url("small\ image\ 3.png");
+}
+
+
+
+#banner3 h2{
+  color: white;
+  font-weight: 900;
+  font-size: 22px;
+}
+
+
+#banner3 h3{
+  color: red;
+  font-weight: 800;
+  font-size: 15px;
+}
+
+#newsletter {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  background-image: url("b.png");
+  
+  
+  background-color: #041e42;
+
+}
+
+#newsletter h4{
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+}
+
+#newsletter p{
+  font-size: 14px;
+  font-weight: 600;
+  color: #818ea0;
+}
+
+
+#newsletter p span{
+  color: #ffbd27;
+}
+
+#newsletter .form{
+  display: flex;
+  width: 40%;
+  
+}
+
+#newsletter input{
+  height: 3.125rem;
+  padding: 0 1.25em;
+  font-size: 14px;
+  width: 100%;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  outline: none;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+#newsletter button{
+  background-color: #088178;
+  color: #fff;
+  white-space: nowrap;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+footer{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+footer .col{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+footer .logo{
+  margin-bottom: 30px;
+}
+
+footer h4{
+  font-size: 14px;
+  padding-bottom: 20px;
+}
+
+
+footer p{
+  font-size: 13px;
+  margin: 0 0 8px 0;
+}
+
+footer a {
+  font-size: 13px;
+  text-decoration: none;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+footer .follow{
+  margin-top: 20px;
+}
+
+footer .follow i{
+  color: #465b52;
+  padding-right: 4px;
+  cursor: pointer;
+}
+
+footer .follow i:hover,
+footer a:hover {
+  color: #088178;
+}
+
+footer .follow i.fa-facebook-f:hover {
+  color: #3b5998; /* Facebook color */
+}
+
+footer .follow i.fa-instagram:hover {
+  color: #e4405f; /* Instagram color */
+}
+
+footer .follow i.fa-twitter:hover {
+  color: #1da1f2; /* Twitter color */
+}
+
+footer .follow i.fa-youtube:hover {
+  color: #ff0000; /* YouTube color */
+}
+
+footer .follow i.fa-pinterest-p:hover {
+  color: #E60023; 
+}
+
+
+/* Shop Page */
+
+#page-header {
+  
+  width: 100%;
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  padding: 14px; 
+  color: white; 
+  text-align: center; 
+}
+
+#page-header h2,
+#page-header p{
+  color: black;
+}
+
+#pagination{
+  text-align: center;
+}
+
+#pagination a{
+  text-decoration: none;
+  background-color: #088178;
+  padding: 15px 20px;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: 600;
+}
+
+#pagination a i {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Single Product */
+
+#prodetails {
+  display: flex;
+  margin-top: 20px;
+}
+
+
+#prodetails .single-pro-image{
+  width: 40%;
+  margin-right: 50px;
+}
+
+.small-img-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.small-img-col {
+  flex-basis: 24%;
+  cursor: pointer;
+}
+
+#prodetails .single-pro-details{
+  width: 50%;
+  padding-top: 30px;
+}
+
+#prodetails .single-pro-details h6{
+  font-size: 26px;
+  color: #113826;
+}
+
+#prodetails .single-pro-details h4{
+  padding: 40px 0 20px 0;
+  
+}
+
+#prodetails .single-pro-details h2{
+  font-size: 26px;
+}
+
+#prodetails .single-pro-details select{
+  display: block;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+}
+
+#prodetails .single-pro-details select:focus{
+  outline: auto;
+}
+
+#prodetails .single-pro-details input{
+  width: 50px;
+  height: 47px;
+  padding-left: 10px;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+#prodetails .single-pro-details input:focus{
+  outline: auto;
+}
+
+#prodetails .single-pro-details button{
+  background-color: #088178;
+  color: #fff;;
+}
+
+#prodetails .single-pro-details span{
+  line-height: 25px;
+}
+
+/* Blog Page */
+
+#blog-header {
+  background-image: url('blog banner.png');
+  width: 100%;
+  height: 40vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  padding: 14px; 
+  color: white; 
+  text-align: center;
+}
+
+#blog{
+  padding: 150px 150px 0 150px;
+}
+
+#blog .blog-box{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: relative; 
+  padding-bottom: 90px;
+}
+
+#blog .blog-img{
+  width: 50%;
+  margin-right: 40px;
+}
+
+#blog img{
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+#blog .blog-details{
+  width: 50%;
+}
+
+#blog .blog-details a{
+  text-decoration: none;
+  font-size: 13px;
+  color: #000;
+  font-weight: 700;
+  position: relative;
+  transition: 0.3s;
+}
+
+#blog .blog-details a::after{
+  content: "";
+  width: 50px;
+  height: 1px;
+  background-color: #000;
+  position: absolute;
+  top: 4px;
+  right: -60px;
+}
+
+#blog .blog-details a:hover{
+  color: #088178;
+}
+
+#blog .blog-details a:hover::after{
+  background-color: #088178;
+}
+
+
+#blog .blog-box h1{
+  position: absolute;
+  top: -40px;
+  left: 0;
+  font-size: 70px;
+  font-weight: 700;
+  color: #c9cbce;
+  z-index: -9;
+}
+
+
+
+
+
+
+
+
+/* About Page */
+
+#about-header {
+  background-image: url('about banner.png');
+  width: 100%;
+  height: 40vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  padding: 14px; 
+  color: whitesmoke; 
+  text-align: center;
+}
+
+#about-header h2{
+  color: white;
+}
+
+#about-header p{
+  color: white;
+  font-weight: 800;
+}
+
+
+
+/* Contact Page */
+
+/* Cart Page */
+
+#cart {
+  overflow-x: auto;
+}
+
+#cart table{
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  white-space: nowrap;
+}
+
+#cart table img{
+  width: 70px;
+}
+
+#cart table td:nth-child(1){
+  width: 100px;
+  text-align: center;
+}
+
+#cart table td:nth-child(2){
+  width: 150px;
+  text-align: center;
+}
+
+#cart table td:nth-child(3){
+  width: 250px;
+  text-align: center;
+}
+
+#cart table td:nth-child(4),
+#cart table td:nth-child(5),
+#cart table td:nth-child(6){
+  width: 150px;
+  text-align: center;
+}
+
+#cart table td:nth-child(5) input{
+  width: 70px;
+  padding: 10px 5px 10px 15px;
+}
+
+#cart table thead{
+  border: 1px solid black;
+  border-left: none;
+  border-right: none;
+}
+
+#cart table thead td{
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 13px;
+  padding: 18px 0;
+}
+
+#cart table tbody tr td{
+  padding-top: 15px;
+}
+
+#cart table tbody td{
+  font-size: 13px;
+}
+
+#cart-add{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#coupon{
+  width: 50%;
+  margin-bottom: 30px;
+}
+
+#coupon h3,
+#subtotal h3{
+  padding-bottom: 15px;
+}
+
+#coupon input{
+  padding: 10px 20px;
+  outline: none;
+  width: 60%;
+  margin-right: 10px;
+  border: 1px solid black;
+}
+
+#coupon button,
+#subtotal button{
+  background-color: #088178;
+  color: #fff;
+  padding: 12px 20px;
+}
+
+#subtotal{
+  width: 50%;
+  margin-bottom: 30px;
+  border: 1px solid black;
+  padding: 30px;
+}
+
+#subtotal table{
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+#subtotal table td{
+  width: 50px;
+  border: 1px solid black;
+  padding: 10px;
+  font-size: 13px;
+}
+
+/* iPad styling */
+
+@media (max-width:799px) {
+  #header {
+    width: 100%; /* Make the header take the full width */
+    padding: 10px 20px; /* Adjust padding for better fit */
+    box-sizing: border-box; /* Ensure padding doesn't cause overflow */
+  }
+
+
+#header .logo {
+  width: 50%;
+  height: auto;
+  margin-left: 210px; /* Center the logo */
+}
+
+#hamburger-icon {
+  right: 560px; /* Adjust the positioning of the hamburger icon */
+  bottom: 10px;
+  top: 1px;
+  font-size: 40px; /* Reduce size slightly for better fit */
+}
+
+#icon-container {
+  gap: 20px; /* Adjust the gap between icons */
+  margin-right: 10px;
+}
+
+#search-icon {
+  margin-left: 10px; /* Align the search icon properly */
+  margin-right: 10px;
+}
+
+  
+#drawer {
+  width: 40%; /* Make drawer a bit wider on iPad */
+
+}
+
+
+#lg-bag, #lg-login {
+    margin: 5px;
+}
+
+#hero video {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Ensures the video covers the container without distortion */
+  display: block;
+}
+
+#hero {
+  position: relative;
+  overflow: hidden; /* Ensure no overflow issues with the video */
+}
+
+#hero h4, #hero h2, #hero h1, #hero p, #hero button {
+  position: relative;
+  z-index: 2; /* Ensures text is displayed over the video */
+  text-align: start;
+  padding: 5px;
+}
+
+#hero video {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+}
+
+  #feature {
+    
+    justify-content: center;
+    
+  }
+  #feature .fe-box {
+    margin: 15px;
+    flex-basis: calc(33.333% - 30px); /* 3 boxes per row */
+  }
+
+  #product1 .pro-container{
+    justify-content: center;
+  }
+
+  #product1 .pro{
+    margin: 15px;
+  }
+
+  #banner{
+    height: 30vh;
+  }
+
+  #sm-banner .banner-box{
+    min-width: 108%;
+    height: 30vh;
+    margin-left: -4%;
+  }
+
+  #sm-banner .banner-box2{
+    min-width: 108%;
+    height: 30vh;
+    margin-left: -4%;
+  }
+
+  #banner3 {
+    padding: 0 40px;
+    
+}
+
+#banner3 .banner-box {
+    width: 28%;
+}
+
+#newsletter .form{
+  width: 70%;
+}
+
+.search-container {
+  max-width: 500px; /* Decrease the max width for iPad */
+}
+
+.search-input {
+  font-size: 14px; /* Decrease font size */
+  padding: 8px;    /* Decrease padding */
+}
+
+.search-button {
+  font-size: 14px; /* Decrease font size */
+  padding: 8px;    /* Decrease padding */
+}
+
+.search-button i {
+  font-size: 16px; /* Adjust icon size */
+}
+
+
+
+
+
+/* iPhone styling */
+
+
+@media (max-width: 477px) {
+  #header {
+    width: 100%; /* Make the header take the full width */
+    padding: 10px 10px; /* Adjust padding for better fit */
+    box-sizing: border-box; /* Ensure padding doesn't cause overflow */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  #header .logo {
+    width: 50%;
+    height: auto;
+    margin-left: 120px; /* Center the logo */
+  }
+
+  #hamburger-icon {
+    position: absolute;
+    right: 330px; /* Adjust the positioning of the hamburger icon */
+    top: 10px;
+    font-size: 30px; /* Reduce size slightly for better fit */
+  }
+
+  #icon-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Adjust the gap between icons */
+    margin-right: 10px;
+  }
+
+  #search-icon {
+    margin-left: 10px; /* Align the search icon properly */
+    margin-right: 10px;
+    font-size: 20px; /* Adjust the size for better fit */
+  }
+
+  #drawer {
+    width: 50%; /* Make drawer wider on smaller screens */
+  }
+
+  #lg-bag, #lg-login {
+    margin: 5px;
+    font-size: 20px; /* Adjust the icon size */
+  }
+
+  #search-container.open #search-input {
+    width: 150px; /* Adjust width for smaller screens */
+  }
+
+
+  h1{
+    font-size: 38px;
+  
+  }
+
+  h2{
+    font-size: 32px;
+    
+  }
+  
+  
+ 
+
+  #hero{
+    padding: 0 20px;
+    background-position: 40%;
+
+  }
+  #hero video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video covers the section */
+    z-index: -1; /* Places the video behind other content */
+  }
+
+  #feature {
+    justify-content: space-between;
+  }
+
+  #feature .fe-box{
+    width: 155px;
+    margin: 0 0 15px 0;
+  }
+
+  #product1 .pro {
+    width: 100%;
+  }
+ 
+  #banner {
+    height: 50vh;
+    
+    
+  }
+
+  .search-container {
+    max-width: 100%; /* Full width for small screens */
+    padding: 10px;   /* Reduce padding */
+  }
+
+  .search-input {
+    width: 70%;      /* Decrease input width */
+    font-size: 12px; /* Decrease font size further */
+    padding: 6px;    /* Reduce padding */
+  }
+
+  .search-button {
+    font-size: 12px; /* Decrease button font size */
+    padding: 6px;    /* Reduce button padding */
+  }
+
+  .search-button i {
+    font-size: 14px; /* Adjust icon size */
+  }
+
+  #sm-banner {
+    padding: 0 20px; /* Match padding of #banner3 */
+  }
+
+  #sm-banner .banner-box,
+  #sm-banner .banner-box2 {
+    width: calc(100% - 10px); /* Account for the padding on both sides */
+    margin-top: 20px; /* Adjust spacing between banners */
+    box-sizing: border-box; /* Ensure padding and borders are included in width */
+  }
+
+  /* Ensure the first banner does not have top margin */
+  #sm-banner .banner-box {
+    margin-top: 20px; /* Remove margin-top for the first banner */
+  }
+
+  #banner3 {
+    padding: 0 20px;
+    margin-top: 20px;
+  }
+
+  #banner3 .banner-box {
+    width: 100%;
+  }
+
+  
+
+  #newsletter {
+    padding: 40px 20px;
+  }
+
+  #newsletter .form{
+    width: 100%;
+  }
+
+  footer .logo {
+    width: 100%; /* Make the logo responsive */
+    max-width: 200px; /* Set a maximum width for mobile */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 20px;
+  }
+
+  footer .copyright {
+     text-align: start;
+}
+
+
+
+/* Single Product */
+
+#prodetails {
+  display: flex;
+  flex-direction: column;
+}
+
+#prodetails .single-pro-image{
+  width: 100%;
+  margin-right: 0;
+}
+
+#prodetails .single-pro-details{
+  width: 100%;
+  
+}
+
+/* Cart page */
+
+#cart-add{
+  flex-direction: column;
+}
+
+#coupon{
+  width: 100%;
+}
+
+#subtotal{
+  width: 100%;
+  padding: 20px;
+}
+}
+
+
+
+
+/* Login Page */
+
+.container {
+  text-align: center;
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.home-icon {
+  font-size: 24px; /* adjust the font size to your liking */
+  margin-right: 0px; /* add some space between the home icon and the logo */
+  color: #333; /* adjust the color to your liking */
+  text-decoration: none;
+}
+
+.home-icon span {
+  font-size: 20px; /* adjust the font size to your liking */
+  margin-left: 5px; /* add some space between the home icon and the text */
+  color: #333; /* adjust the color to your liking */
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.logos {
+  margin-right: 550px;
+  height: 10vh;
+
+}
+h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+p {
+  font-size: 14px;
+  color: #666666;
+  margin-bottom: 30px;
+}
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.tab {
+  font-size: 14px;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+}
+.tab.active {
+  border-bottom: 2px solid #000000;
+}
+form {
+  text-align: left;
+}
+label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+}
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.options label {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+.options input[type="checkbox"] {
+  margin-right: 5px;
+}
+.options a {
+  font-size: 14px;
+  color: #666666;
+  text-decoration: none;
+}
+.options a:hover {
+  text-decoration: underline;
+}
+.login-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.login-button:hover {
+  background-color: #333333;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.container {
+  background-color: #fff;
+  padding: 40px;
+  width: 100%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h1 {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+p {
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 30px;
+}
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.tabs div {
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.tabs .active {
+  border-bottom: 2px solid #000;
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
+label {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+input, select {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+.interests {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.interests div {
+  width: 50%;
+  display: flex;
+  align-items: center;
+}
+.interests input {
+  margin-right: 10px;
+}
+.privacy {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 20px;
+}
+.privacy a {
+  color: #000;
+  text-decoration: none;
+}
+.privacy a:hover {
+  text-decoration: underline;
+}
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.checkbox-group input {
+  margin-right: 10px;
+}
+.submit-btn {
+  background-color: #000;
+  color: #fff;
+  padding: 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.submit-btn:hover {
+  background-color: #333;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
