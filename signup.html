@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>www.Harbiwore.com</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+</head>
+
+<body>
+    <section id="header">
+        <a href="#" class="home-icon" onclick="window.location.href='index.html';"><i class="fas fa-home"></i><span>Home</span></a>
+        <a href="#"><img src="beige_logo-removebg-preview.png" class="logos" alt=""></a>
+    
+        
+    
+        
+    </section>
+    <div class="container">
+  <h1>Please sign in or register</h1>
+  <p>Create your account to be part of the HARBIWORE world, discover our new collections, receive news from the maison.</p>
+  <div class="tabs">
+      <div class="dual" onclick="window.location.href='login.html';">LOGIN</div>
+      <div class="active">CREATE NEW ACCOUNT</div>
+  </div>
+  <form>
+      <label for="title">Title *</label>
+      <select id="title" name="title">
+          <option>Ms.</option>
+          <option>Mr.</option>
+          <option>Mrs.</option>
+      </select>
+      <label for="first-name">First Name *</label>
+      <input type="text" id="first-name" name="first-name">
+      <label for="last-name">Last Name *</label>
+      <input type="text" id="last-name" name="last-name">
+      <label for="country">Country/Region *</label>
+      <select id="country" name="country">
+          <option>India</option>
+          <option>USA</option>
+          <option>UK</option>
+      </select>
+      <label for="email">Email Address *</label>
+      <input type="email" id="email" name="email">
+      <label for="confirm-email">Confirm Email *</label>
+      <input type="email" id="confirm-email" name="confirm-email">
+      <label for="password">Password *</label>
+      <input type="password" id="password" name="password">
+      <p>Please enter 8 or more characters and at least one number. Leading or trailing spaces will be ignored.</p>
+      <label for="confirm-password">Confirm Password *</label>
+      <input type="password" id="confirm-password" name="confirm-password">
+      <div class="interests">
+          <div><input type="checkbox" id="tshirts" name="interests"><label for="tshirts">Tshirts</label></div>
+          <div><input type="checkbox" id="fragrances" name="interests"><label for="fragrances">Fragrances</label></div>
+          <div><input type="checkbox" id="watches" name="interests"><label for="watches">Watches</label></div>
+          <div><input type="checkbox" id="shirts" name="interests"><label for="shirts">Shirts</label></div>
+          <div><input type="checkbox" id="shoes" name="interests"><label for="shoes">Shoes</label></div>
+          <div><input type="checkbox" id="leather" name="interests"><label for="leather">Leather</label></div>
+          <div><input type="checkbox" id="eyewear" name="interests"><label for="eyewear">Eyewear</label></div>
+          <div><input type="checkbox" id="all" name="interests"><label for="all">All</label></div>
+      </div>
+      <div class="privacy">
+          <p>Having analyzed and understood the <a href="#">Privacy Information Notice</a>, I declare that I am over 16 years of age and:</p>
+          <div class="checkbox-group">
+              <input type="checkbox" id="agree" name="agree">
+              <label for="agree">I agree to the analysis of my interests, preferences and purchasing habits (profiling) based on my purchases made at Harbiwore.</label>
+          </div>
+          <div class="checkbox-group">
+              <input type="checkbox" id="consent" name="consent">
+              <label for="consent">I consent to receiving marketing communications from Harbiwore regarding product care, services, events, and new collections.</label>
+          </div>
+      </div>
+      <p>*Required fields</p>
+      <p>This site is protected by reCAPTCHA and Google <a href="#">Privacy Policy</a> and <a href="#">Terms of Service</a> apply.</p>
+      <p>Data Protection Certified (BS10012)</p>
+      <button type="submit" class="submit-btn">CREATE ACCOUNT</button>
+  </form>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
